@@ -24,32 +24,56 @@ namespace ComuniScraper
 
             Scraper scrape = Scraper.CreateScraper();
 
+            dynamic result;
+
             if (args.Length == 1)
             {
-                Task<List<HtmlNode>> result = scrape.scrape(args[0]);
+                result = scrape.scrape(args[0]);
                 result.Wait(); //wait for the result
-                PrintResult(result.Result);
             }
             else
             {
-                Task<List<List<HtmlNode>>> result = scrape.scrape(args);
+                result = scrape.scrape(args);
                 result.Wait(); //wait for the result
-                PrintResult(result.Result);
+            }
 
+            if(args[args.Length-1].Equals("-txt"))
+            {
+
+            }
+            else
+            {
+                if(args[args.Length-1].Equals("-xml"))
+                {
+
+                }
+            }
+
+            switch(args[args.Length-1])
+            {
+                case "-txt":
+                    //txt
+                    break;
+                case "-xml":
+                    //xml
+                    break;
+                default:
+                    PrintResult(result);
+                    break; 
             }
 
             Console.ReadKey();
         }
 
-        static void PrintResult(List<HtmlNode> list)
+        static void PrintResult(Task<List<HtmlNode>> list)
         {
-            foreach (HtmlNode x in list)
+            foreach (HtmlNode x in list.Result)
                 Console.WriteLine(x.InnerHtml);
         }
 
-        static void PrintResult(List<List<HtmlNode>> list)
+        static void PrintResult(Task<List<List<HtmlNode>>> list)
         {
-            foreach(List<HtmlNode> l in list)
+            foreach(List<HtmlNode> l in list.Result)
                 foreach (HtmlNode x in l)
                     Console.WriteLine(x.InnerHtml);
         }
