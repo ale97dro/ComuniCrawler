@@ -1,4 +1,4 @@
-﻿using ComuniScraper.src;
+﻿using KokeScraper.src;
 using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace ComuniScraper
+namespace KokeScraper
 {
     /// <summary>
     /// This class check only the rightness of the input parameters and then call the real scraping tool.

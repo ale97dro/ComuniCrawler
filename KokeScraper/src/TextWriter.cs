@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 
-namespace ComuniScraper.src
+namespace KokeScraper.src
 {
-    class XmlWriter : FileWriter
+    class TextWriter : FileWriter
     {
         //public void Write(List<HtmlNode> list)
         //{
@@ -16,7 +16,8 @@ namespace ComuniScraper.src
 
         public void Write(List<List<HtmlNode>> list)
         {
-            Console.WriteLine("Printed XML");
+            Console.WriteLine("Printed TXT");
+            //throw new NotImplementedException();
         }
     }
 }

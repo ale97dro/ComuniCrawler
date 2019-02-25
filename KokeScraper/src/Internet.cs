@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComuniScraper
+namespace KokeScraper
 {
     [Obsolete("All the content of this class was moved to Scraper class")]
     class Internet

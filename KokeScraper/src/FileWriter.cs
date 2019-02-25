@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComuniScraper.src
+namespace KokeScraper.src
 {
     interface FileWriter
     {

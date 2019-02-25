@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComuniScraper
+namespace KokeScraper
 {
     /// <summary>
     /// This class is performing the scraping operation
