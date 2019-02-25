@@ -15,49 +15,35 @@ namespace KokeScraper
     /// </summary>
     class Program
     {
-        //TODO LIST
-        // 1) print on .txt file the result
-        // 2) print on .xml file the result
-
         static void Main(string[] args)
         {
             Console.WriteLine("Koke - Scraping software by Alessandro Bianchi");
             Console.WriteLine("Retrieve from www.comuni-italiani.it informations about province' cities\n");
             
-
             Scraper scrape = Scraper.CreateScraper();
 
-            //dynamic result;
-            //if (args.Length == 1)
-            //{
-            //    result = scrape.scrape(args[0]);
-            //    result.Wait(); //wait for the result
-            //}
-            //else
-            //{
-            //    result = scrape.scrape(args);
-            //    result.Wait(); //wait for the result
-            //}
+            string[] paths = args.Where(val => !val.Equals("-txt") && !val.Equals("-xml")).ToArray();
 
-
-            dynamic result = scrape.scrape(args.Where(val => !val.Equals("-txt") && !val.Equals("-xml")).ToArray());
+            dynamic result = scrape.scrape(paths);
             result.Wait();
-           
 
-            switch(args[args.Length-1])
+            paths = PreparePaths(paths);
+
+            switch (args[args.Length - 1])
             {
                 case "-txt":
-                    new TextWriter().Write(result.Result);
+                    new TextWriter().Write(result.Result, paths);
                     break;
                 case "-xml":
                     //xml
-                    new XmlWriter().Write(result.Result);
+                    new XmlWriter().Write(result.Result, paths);
                     break;
                 default:
                     PrintResult(result);
                     break; 
             }
 
+            Console.WriteLine("Finished");
             Console.ReadKey();
         }
 
@@ -72,6 +58,32 @@ namespace KokeScraper
             foreach(List<HtmlNode> l in list.Result)
                 foreach (HtmlNode x in l)
                     Console.WriteLine(x.InnerHtml);
+        }
+
+        static string[] PreparePaths(string[] paths)
+        {
+            string[] newPaths = new string[paths.Length];
+
+            for(int i=0;i<paths.Length;i++)
+            {
+                StringBuilder builder = new StringBuilder();
+
+                for (int c = 0; c < paths[i].Length; c++)
+                {
+                    if (Char.IsPunctuation(paths[i][c]))
+                    {
+                        builder.Append("-");
+                    }
+                    else
+                    {
+                        builder.Append(paths[i][c]);
+                    }
+                }
+
+                newPaths[i] = builder.ToString();
+            }
+           
+            return newPaths;
         }
     }
 }

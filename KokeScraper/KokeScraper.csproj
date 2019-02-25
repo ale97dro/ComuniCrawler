@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9B0A8FEE-893F-4729-86CF-7B1C7DD365F2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ComuniCrawler</RootNamespace>
+    <RootNamespace>KokeScraper</RootNamespace>
     <AssemblyName>ComuniCrawler</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -54,6 +54,7 @@
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\TextWriter.cs" />
+    <Compile Include="src\WritingException.cs" />
     <Compile Include="src\XmlWriter.cs" />
   </ItemGroup>
   <ItemGroup>

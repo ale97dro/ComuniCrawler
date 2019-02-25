@@ -10,6 +10,6 @@ namespace KokeScraper.src
     interface FileWriter
     {
        // void Write(List<HtmlNode> list);
-        void Write(List<List<HtmlNode>> list);
+        void Write(List<List<HtmlNode>> list, string[] paths);
     }
 }
