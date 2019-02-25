@@ -8,8 +8,9 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComuniCrawler
+namespace ComuniScraper
 {
+    [Obsolete("All the content of this class was moved to Scraper class")]
     class Internet
     {
         //dynamic: return type for var

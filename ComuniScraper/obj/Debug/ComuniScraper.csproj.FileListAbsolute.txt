@@ -1,0 +1,11 @@
+D:\alex2\Desktop\RepoGit\ComuniCrawler\ComuniScraper\bin\Debug\ComuniCrawler.exe.config
+D:\alex2\Desktop\RepoGit\ComuniCrawler\ComuniScraper\bin\Debug\ComuniCrawler.exe
+D:\alex2\Desktop\RepoGit\ComuniCrawler\ComuniScraper\bin\Debug\ComuniCrawler.pdb
+D:\alex2\Desktop\RepoGit\ComuniCrawler\ComuniScraper\bin\Debug\HtmlAgilityPack.dll
+D:\alex2\Desktop\RepoGit\ComuniCrawler\ComuniScraper\bin\Debug\HtmlAgilityPack.pdb
+D:\alex2\Desktop\RepoGit\ComuniCrawler\ComuniScraper\bin\Debug\HtmlAgilityPack.xml
+D:\alex2\Desktop\RepoGit\ComuniCrawler\ComuniScraper\obj\Debug\ComuniScraper.csprojAssemblyReference.cache
+D:\alex2\Desktop\RepoGit\ComuniCrawler\ComuniScraper\obj\Debug\ComuniScraper.csproj.CoreCompileInputs.cache
+D:\alex2\Desktop\RepoGit\ComuniCrawler\ComuniScraper\obj\Debug\ComuniScraper.csproj.CopyComplete
+D:\alex2\Desktop\RepoGit\ComuniCrawler\ComuniScraper\obj\Debug\ComuniCrawler.exe
+D:\alex2\Desktop\RepoGit\ComuniCrawler\ComuniScraper\obj\Debug\ComuniCrawler.pdb
