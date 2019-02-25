@@ -1,4 +1,5 @@
-﻿using HtmlAgilityPack;
+﻿using ComuniScraper.src;
+using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,25 +38,19 @@ namespace ComuniScraper
                 result.Wait(); //wait for the result
             }
 
-            if(args[args.Length-1].Equals("-txt"))
-            {
 
-            }
-            else
-            {
-                if(args[args.Length-1].Equals("-xml"))
-                {
-
-                }
-            }
+            //result = scrape.scrape(args.Where(val => !val.Equals("-c") && !val.Equals("-xml")).ToArray());
+            //result.Wait();
+           
 
             switch(args[args.Length-1])
             {
                 case "-txt":
-                    //txt
+                    new TextWriter().Write(result);
                     break;
                 case "-xml":
                     //xml
+                    new XmlWriter().Write(result);
                     break;
                 default:
                     PrintResult(result);
