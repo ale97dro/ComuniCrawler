@@ -29,7 +29,7 @@ namespace ComuniScraper
             return scraper;
         }
 
-        public async Task<List<HtmlNode>> scrape(string website)
+        private async Task<List<HtmlNode>> scrape(string website)
         {
             HttpClient http = new HttpClient();
             var response = await http.GetByteArrayAsync(website);

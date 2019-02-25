@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 namespace ComuniScraper
 {
     /// <summary>
-    /// This class check only the rightness of the input parameters and then call the real crawler.
-    /// Finally, wait for the user next decision
+    /// This class check only the rightness of the input parameters and then call the real scraping tool.
+    /// Then, print or save the result
     /// </summary>
     class Program
     {
@@ -22,35 +22,36 @@ namespace ComuniScraper
         static void Main(string[] args)
         {
             Console.WriteLine("Koke - Scraping software by Alessandro Bianchi");
+            Console.WriteLine("Retrieve from www.comuni-italiani.it informations about province' cities\n");
+            
 
             Scraper scrape = Scraper.CreateScraper();
 
-            dynamic result;
+            //dynamic result;
+            //if (args.Length == 1)
+            //{
+            //    result = scrape.scrape(args[0]);
+            //    result.Wait(); //wait for the result
+            //}
+            //else
+            //{
+            //    result = scrape.scrape(args);
+            //    result.Wait(); //wait for the result
+            //}
 
-            if (args.Length == 1)
-            {
-                result = scrape.scrape(args[0]);
-                result.Wait(); //wait for the result
-            }
-            else
-            {
-                result = scrape.scrape(args);
-                result.Wait(); //wait for the result
-            }
 
-
-            //result = scrape.scrape(args.Where(val => !val.Equals("-c") && !val.Equals("-xml")).ToArray());
-            //result.Wait();
+            dynamic result = scrape.scrape(args.Where(val => !val.Equals("-txt") && !val.Equals("-xml")).ToArray());
+            result.Wait();
            
 
             switch(args[args.Length-1])
             {
                 case "-txt":
-                    new TextWriter().Write(result);
+                    new TextWriter().Write(result.Result);
                     break;
                 case "-xml":
                     //xml
-                    new XmlWriter().Write(result);
+                    new XmlWriter().Write(result.Result);
                     break;
                 default:
                     PrintResult(result);

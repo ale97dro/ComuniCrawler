@@ -9,14 +9,14 @@ namespace ComuniScraper.src
 {
     class XmlWriter : FileWriter
     {
-        public void Write(List<HtmlNode> list)
-        {
-            throw new NotImplementedException();
-        }
+        //public void Write(List<HtmlNode> list)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public void Write(List<List<HtmlNode>> list)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Printed XML");
         }
     }
 }
