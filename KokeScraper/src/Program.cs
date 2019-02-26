@@ -24,7 +24,7 @@ namespace KokeScraper
 
             string[] paths = args.Where(val => !val.Equals("-txt") && !val.Equals("-xml")).ToArray();
 
-            dynamic result = scrape.ScrapeComuniItaliani(paths, "ISO-8859-1");
+            dynamic result = scrape.scrapeComuniItaliani(paths, "ISO-8859-1");
             result.Wait();
 
             paths = PreparePaths(paths);
@@ -68,16 +68,10 @@ namespace KokeScraper
                 StringBuilder builder = new StringBuilder();
 
                 for (int c = 0; c < paths[i].Length; c++)
-                {
                     if (Char.IsPunctuation(paths[i][c]))
-                    {
                         builder.Append("-");
-                    }
                     else
-                    {
                         builder.Append(paths[i][c]);
-                    }
-                }
 
                 newPaths[i] = builder.ToString();
             }
