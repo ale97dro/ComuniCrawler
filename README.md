@@ -11,6 +11,6 @@ Koke work with command line: you can pass how many urls you want and then Koke p
 If you want to save the results, you can specify as last parameter '-txt' or '-xml' to specify the file type.
 
 Here some examples of Koke execution:
-	* KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html
-	* KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html -xml
-	* KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html -txt
+* KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html
+* KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html -xml
+* KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html -txt
