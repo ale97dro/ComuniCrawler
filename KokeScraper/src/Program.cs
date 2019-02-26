@@ -24,7 +24,7 @@ namespace KokeScraper
 
             string[] paths = args.Where(val => !val.Equals("-txt") && !val.Equals("-xml")).ToArray();
 
-            dynamic result = scrape.scrapeComuniItaliani(paths, "ISO-8859-1");
+            dynamic result = scrape.ScrapeComuniItaliani(paths, "ISO-8859-1");
             result.Wait();
 
             paths = PreparePaths(paths);
@@ -35,7 +35,6 @@ namespace KokeScraper
                     new TextWriter().Write(result.Result, paths);
                     break;
                 case "-xml":
-                    //xml
                     new XmlWriter().Write(result.Result, paths);
                     break;
                 default:
