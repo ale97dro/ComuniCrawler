@@ -7,7 +7,7 @@
     <ProjectGuid>{9B0A8FEE-893F-4729-86CF-7B1C7DD365F2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>KokeScraper</RootNamespace>
-    <AssemblyName>ComuniCrawler</AssemblyName>
+    <AssemblyName>KokeScraper</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
