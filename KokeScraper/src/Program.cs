@@ -15,6 +15,10 @@ namespace KokeScraper
     /// </summary>
     class Program
     {
+        /// <summary>
+        /// ATTENTION: AT THIS MOMENT, DOESN'T EXIST ANY WAY TO CHOOSE THE RIGHT SCRAPING ALGHORITM ACCORDING TO THE INPUT URLS
+        /// </summary>
+        /// <param name="args">List of urls and (optional) file format in which save results</param>
         static void Main(string[] args)
         {
             Console.WriteLine("Koke - Scraping software by Alessandro Bianchi");
@@ -42,8 +46,10 @@ namespace KokeScraper
                     break; 
             }
 
+            //Test for Ticino cities
             //dynamic result_ticino = scrape.scrapeComuniTicino(new string[] { "https://it.wikipedia.org/wiki/Comuni_del_Canton_Ticino" }, "UTF-8");
             //result_ticino.Wait();
+            //new XmlWriter().Write(result_ticino.Result, new string[] { "test.xml" });
 
             Console.WriteLine("Finished");
             Console.ReadKey();
