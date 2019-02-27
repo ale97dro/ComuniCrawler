@@ -42,6 +42,9 @@ namespace KokeScraper
                     break; 
             }
 
+            //dynamic result_ticino = scrape.scrapeComuniTicino(new string[] { "https://it.wikipedia.org/wiki/Comuni_del_Canton_Ticino" }, "UTF-8");
+            //result_ticino.Wait();
+
             Console.WriteLine("Finished");
             Console.ReadKey();
         }

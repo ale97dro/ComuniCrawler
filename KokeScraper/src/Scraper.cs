@@ -103,5 +103,39 @@ namespace KokeScraper
 
             return results;
         }
+
+        public async Task<List<List<HtmlNode>>> scrapeComuniTicino(string[] websites, string encoding)
+        {
+            List<List<HtmlNode>> results = new List<List<HtmlNode>>();
+
+            foreach(string website in websites)
+            {
+                HtmlDocument resultant = await LoadSource(website, encoding); //retrieve the web page
+
+                List<HtmlNode> tables = resultant.DocumentNode.Descendants() //find tables in page
+                    .Where(x => (x.Name == "table"))
+                    .ToList();
+
+                List<HtmlNode> tr = tables[0] //information needed are in the first table, so I choose 0 table and I extract all the 'tr' field
+                    .Descendants()
+                    .Where(x => x.Name == "tr")
+                    .ToList();
+
+                List<HtmlNode> temp = new List<HtmlNode>();
+
+                for (int i = 1; i < tr.Count; i++) //for every tr/row of the table
+                {
+                    List<HtmlNode> tds = tr[i].Descendants().Where(x => x.Name == "td").ToList(); //extract 'td' fields (cell)
+
+                    temp.Add(tds[1].Descendants() //find the 'a' link in the td field and add to the temp list. I know for sure that every td contains exactly only one tag a
+                        .Where(x => x.Name == "a")
+                        .ToList()[0]);
+                }
+
+                results.Add(temp);
+            }
+
+            return results;
+        }
     }
 }
