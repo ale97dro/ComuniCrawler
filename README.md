@@ -2,7 +2,11 @@
 
 Koke is a web scraper based on HtmlAgilityPack.
 
-At this moment, Koke can find informations about city in page like [this](http://www.comuni-italiani.it/012/lista.html): Koke extract only the list of cities.
+Koke was designed for a very specific use. Here a list of "supported" websites:
+* [Comuni Italiani](http://www.comuni-italiani.it/012/lista.html): page like this contains information about italian cities
+* [Comuni Ticino](https://it.wikipedia.org/wiki/Comuni_del_Canton_Ticino): this page contains information about Ticino Canton in Switzerland
+
+At this moment, Koke can find informations about city in page like : Koke extract only the list of cities.
 
 # Command line
 
