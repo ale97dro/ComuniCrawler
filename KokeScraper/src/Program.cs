@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace KokeScraper
@@ -22,18 +21,39 @@ namespace KokeScraper
         static void Main(string[] args)
         {
             Console.WriteLine("Koke - Scraping software by Alessandro Bianchi");
-            Console.WriteLine("Retrieve from www.comuni-italiani.it informations about province' cities\n");
+            Console.WriteLine("Retrieve informations about cities and locations\n");
             
             Scraper scrape = Scraper.CreateScraper();
 
-            string[] paths = args.Where(val => !val.Equals("-txt") && !val.Equals("-xml")).ToArray();
+            //Read the type of link you have to scrape. The mode is passed as argument
+            //Then set the argument to -1
+            string mode = args[args.Length - 1];
+            args[args.Length - 1] = "-1";
 
-            dynamic result = scrape.scrapeComuniItaliani(paths, "ISO-8859-1");
-            result.Wait();
+            string[] paths = args.Where(val => !val.Equals("-txt") && !val.Equals("-xml") && !val.Equals("-1")).ToArray(); //extract the web urls
 
-            paths = PreparePaths(paths);
+           
+            dynamic result;
+            
+            //Change the right scraping method according to the mode
+            switch (mode)
+            {
+                case "0":
+                    result = scrape.ScrapeComuniItaliani(paths, "ISO-8859-1");
+                    break;
+                case "1":
+                    result = scrape.ScrapeComuniTicino(paths, "UTF-8");
+                    break;
+                default:
+                    Console.WriteLine("Error! Wrong mode");
+                    throw new Exception("Error! Wrong mode!");
+            }
 
-            switch (args[args.Length - 1])
+            result.Wait(); //wait for the scraping
+
+            paths = PreparePaths(paths); //parse the web urls into filename
+
+            switch (args[args.Length - 2]) //if you add more input parameters, remember to change the index
             {
                 case "-txt":
                     new TextWriter().Write(result.Result, paths);
@@ -45,11 +65,6 @@ namespace KokeScraper
                     PrintResult(result);
                     break; 
             }
-
-            //Test for Ticino cities
-            //dynamic result_ticino = scrape.scrapeComuniTicino(new string[] { "https://it.wikipedia.org/wiki/Comuni_del_Canton_Ticino" }, "UTF-8");
-            //result_ticino.Wait();
-            //new XmlWriter().Write(result_ticino.Result, new string[] { "test.xml" });
 
             Console.WriteLine("Finished");
             Console.ReadKey();

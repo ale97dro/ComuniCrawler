@@ -14,7 +14,15 @@ Koke work with command line: you can pass how many urls you want and then Koke p
 
 If you want to save the results, you can specify as last parameter '-txt' or '-xml' to specify the file type.
 
+You have to specify the working mode: working mode is the "type" of urls you have submitted to Koke.
+Available working modes:
+* 0: Comuni Italiani
+* 1: Comuni Ticino
+
+
+Generic command: ./KokeScraper urls working_mode [file_type]
+
 Here some examples of Koke execution:
-* KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html
-* KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html -xml
-* KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html -txt
+* KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html 0
+* KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html 0 -xml
+* KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html 0 -txt

@@ -68,7 +68,7 @@ namespace KokeScraper
         //    return a;
         //}
 
-        public async Task<List<List<HtmlNode>>> scrapeComuniItaliani(string[] websites, string encoding)
+        public async Task<List<List<HtmlNode>>> ScrapeComuniItaliani(string[] websites, string encoding)
         {
             List<List<HtmlNode>> results = new List<List<HtmlNode>>();
 
@@ -104,7 +104,7 @@ namespace KokeScraper
             return results;
         }
 
-        public async Task<List<List<HtmlNode>>> scrapeComuniTicino(string[] websites, string encoding)
+        public async Task<List<List<HtmlNode>>> ScrapeComuniTicino(string[] websites, string encoding)
         {
             List<List<HtmlNode>> results = new List<List<HtmlNode>>();
 
