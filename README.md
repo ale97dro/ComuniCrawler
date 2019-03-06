@@ -20,7 +20,7 @@ Available working modes:
 * 1: Comuni Ticino
 
 
-Generic command: ./KokeScraper urls working_mode [file_type]
+Generic command: ```./KokeScraper urls working_mode [file_type]```
 
 Here some examples of Koke execution:
 * KokeScraper http://www.comuni-italiani.it/012/lista.html http://www.comuni-italiani.it/013/lista.html 0
